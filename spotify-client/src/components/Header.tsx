@@ -18,13 +18,11 @@ export const Header: React.FC = () => {
     const [, , removeCookie] = useCookies(['access_token', 'refresh_token']);
 
     const handleClick = React.useCallback(() => {
-
-        navigate('')
-
+      window.location.assign('https://spotifyapi-website-mxq9.vercel.app/');
     }, [navigate])
 
     const handleLogOut = React.useCallback(() => {
-
+        window.location.assign('https://spotifyapi-website-mxq9.vercel.app/');
         navigate('')
         removeCookie('access_token')
         removeCookie('refresh_token')
