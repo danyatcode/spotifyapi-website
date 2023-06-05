@@ -11,7 +11,9 @@ function App() {
 
   return (
     <div className='App' style={{width: "100%"}}>
-      <BrowserRouter basename='/spotify-clone/'>
+      <BrowserRouter 
+      // basename='/spotify-clone/'
+      >
         <Header />
         <Routes>
           <Route path='/' element={<Home/>} />
