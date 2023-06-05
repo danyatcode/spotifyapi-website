@@ -43,7 +43,7 @@ export const Home:FC = () => {
 
 
   React.useEffect(() => {
-      if(!cookies.access_token && !loggedState){
+      if(!cookies.access_token){
           fetchData();
       }
   }, [loggedState])
