@@ -5,14 +5,16 @@ import { fetchProfile } from "../services/fetchesUser/FetchProfile";
 import { useDispatch } from "react-redux";
 import { clearSelectedPlaylist, setLogOut } from "../redux/actions/actions";
 import { fetchPlaylists } from "../services/fetchesUser/FetchPlaylists";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { fetchFeatured } from "../services/fetchesUser/FetchFeatured";
 import { Playlist, ShopReducerUI} from "../types/types";
+import { fetchData } from "../services/FetchData";
 
 export const Home:FC = () => {
   const [cookies] = useCookies(['access_token'])
   const dispatch = useDispatch()
   const location = useLocation()
+  const navigate = useNavigate()
 
   const profile = useSelector((state: ShopReducerUI) => state.userProfile)
   const featuredPlaylists:Playlist[] = useSelector((state: ShopReducerUI): Playlist[] => state.featuredPlaylists?.playlists?.items) 
@@ -36,7 +38,16 @@ export const Home:FC = () => {
     }
   }, [location])
 
-  
+  React.useEffect( () => {
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get("code");
+
+    if(code){
+      fetchData();
+      navigate('')
+    }
+  }, [])
+
   return (
     <div className="home-page">
       <div className="home-page-container">
