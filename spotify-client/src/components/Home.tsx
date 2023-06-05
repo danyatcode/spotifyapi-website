@@ -50,7 +50,7 @@ export const Home:FC = () => {
 
   React.useEffect( () =>{
      if(playlists){
-        setTimeout(() => navigate('https://spotifyapi-website-mxq9.vercel.app/'), 500)
+        setTimeout(() => navigate(''), 500)
      }
     }, [profile, playlists])
 
