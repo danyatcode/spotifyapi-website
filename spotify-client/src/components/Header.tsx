@@ -19,13 +19,13 @@ export const Header: React.FC = () => {
 
     const handleClick = React.useCallback(() => {
 
-        navigate('/')
+        navigate('')
 
     }, [navigate])
 
     const handleLogOut = React.useCallback(() => {
 
-        navigate('/')
+        navigate('')
         removeCookie('access_token')
         removeCookie('refresh_token')
         dispatch(setLogOut())
