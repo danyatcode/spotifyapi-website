@@ -5,23 +5,18 @@ import { fetchProfile } from "../services/fetchesUser/FetchProfile";
 import { useDispatch } from "react-redux";
 import { clearSelectedPlaylist, setLogOut } from "../redux/actions/actions";
 import { fetchPlaylists } from "../services/fetchesUser/FetchPlaylists";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { fetchFeatured } from "../services/fetchesUser/FetchFeatured";
 import { Playlist, ShopReducerUI} from "../types/types";
-import { fetchData } from "../services/FetchData";
 
 export const Home:FC = () => {
   const [cookies] = useCookies(['access_token'])
   const dispatch = useDispatch()
   const location = useLocation()
 
-  const navigate = useNavigate();
-  const loggedState = useSelector((state: {logState: boolean}) => state.logState)
-
   const profile = useSelector((state: ShopReducerUI) => state.userProfile)
   const featuredPlaylists:Playlist[] = useSelector((state: ShopReducerUI): Playlist[] => state.featuredPlaylists?.playlists?.items) 
   const userPlaylists:Playlist[] = useSelector((state: ShopReducerUI):Playlist[] => state.userPlaylists?.items)
-  const playlists: Playlist[]  = useSelector((state: ShopReducerUI): Playlist[] => state.userPlaylists?.items)
 
   React.useEffect( () => {
     async function checkData(){
@@ -41,13 +36,7 @@ export const Home:FC = () => {
     }
   }, [location])
 
-
-  React.useEffect(() => {
-      if(!cookies.access_token){
-          fetchData();
-      }
-  }, [loggedState])
-
+  
   return (
     <div className="home-page">
       <div className="home-page-container">
