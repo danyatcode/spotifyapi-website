@@ -10,7 +10,7 @@ export async function redirectToAuthCodeFlow(clientId: string) {
     params.append("client_id", clientId);
     params.append("response_type", "code");
     // params.append("redirect_uri", `http://${port}/login`);
-    params.append("redirect_uri", "https://spotifyapi-website-mxq9.vercel.app/#/login");
+    params.append("redirect_uri", "https://spotifyapi-website-mxq9.vercel.app/login");
     params.append("scope", "user-read-private user-read-email");
     params.append("code_challenge_method", "S256");
     params.append("code_challenge", challenge);

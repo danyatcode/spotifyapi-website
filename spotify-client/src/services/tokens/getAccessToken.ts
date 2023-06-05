@@ -15,7 +15,7 @@ export async function getAccessToken(clientId: string, code: string): Promise<st
     params.append("client_id", clientId);
     params.append("grant_type", "authorization_code");
     params.append("code", code);
-    params.append("redirect_uri", "https://spotifyapi-website-mxq9.vercel.app/#/login?");
+    params.append("redirect_uri", "https://spotifyapi-website-mxq9.vercel.app/");
     // params.append("redirect_uri", `http://${port}/login`);
     params.append("code_verifier", verifier!);
 
