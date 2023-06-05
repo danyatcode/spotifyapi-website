@@ -22,7 +22,7 @@ export const Home:FC = () => {
   const featuredPlaylists:Playlist[] = useSelector((state: ShopReducerUI): Playlist[] => state.featuredPlaylists?.playlists?.items) 
   const userPlaylists:Playlist[] = useSelector((state: ShopReducerUI):Playlist[] => state.userPlaylists?.items)
   const playlists: Playlist[]  = useSelector((state: ShopReducerUI): Playlist[] => state.userPlaylists?.items)
-  
+
   React.useEffect( () => {
     async function checkData(){
       if(!cookies.access_token){
@@ -43,14 +43,14 @@ export const Home:FC = () => {
 
 
   React.useEffect(() => {
-      if(!cookies.access_token){
+      if(!cookies.access_token && !loggedState){
           fetchData();
       }
   }, [loggedState])
 
   React.useEffect( () =>{
      if(playlists){
-        setTimeout(() => navigate('/'), 500)
+        setTimeout(() => navigate('https://spotifyapi-website-mxq9.vercel.app/'), 500)
      }
     }, [profile, playlists])
 
