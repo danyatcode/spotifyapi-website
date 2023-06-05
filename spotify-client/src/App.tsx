@@ -1,4 +1,4 @@
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import { Home } from './components/Home';
 import { Login } from './components/Login';
 import { Routes, Route } from 'react-router'
@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div className='App' style={{width: "100%"}}>
-      <BrowserRouter 
+      <HashRouter 
       // basename='/'
       >
         <Header />
@@ -22,7 +22,7 @@ function App() {
           <Route path='/search' element={<Search />} />
         </Routes>
         <Player />
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
