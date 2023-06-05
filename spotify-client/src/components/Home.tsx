@@ -48,12 +48,6 @@ export const Home:FC = () => {
       }
   }, [loggedState])
 
-  React.useEffect( () =>{
-     if(playlists){
-        setTimeout(() => navigate(''), 500)
-     }
-    }, [profile, playlists])
-
   return (
     <div className="home-page">
       <div className="home-page-container">
