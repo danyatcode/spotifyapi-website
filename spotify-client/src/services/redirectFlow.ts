@@ -1,5 +1,5 @@
 
-const port = "127.0.0.1:5173";
+// const port = "127.0.0.1:5173";
 export async function redirectToAuthCodeFlow(clientId: string) {
     const verifier = generateCodeVerifier(128);
     const challenge = await generateCodeChallenge(verifier);
@@ -9,7 +9,7 @@ export async function redirectToAuthCodeFlow(clientId: string) {
     const params = new URLSearchParams();
     params.append("client_id", clientId);
     params.append("response_type", "code");
-    params.append("redirect_uri", `http://${port}/login`);
+    // params.append("redirect_uri", `http://${port}/login`);
     params.append("redirect_uri", "https://spotifyapi-website-mxq9.vercel.app/login");
     params.append("scope", "user-read-private user-read-email");
     params.append("code_challenge_method", "S256");
