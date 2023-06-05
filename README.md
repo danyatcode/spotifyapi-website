@@ -25,4 +25,4 @@ And of course it's reduced into its features cause of it didn't expected for pro
 *   vite compiler
 
 
-## [Website available with:](https://spotifyapi-website-mxq9.vercel.app/) 
+## Website available with:[Click](https://spotifyapi-website-mxq9.vercel.app/) 
